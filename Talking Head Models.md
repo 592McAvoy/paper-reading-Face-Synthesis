@@ -71,7 +71,7 @@ $$
   - Extracted embedding is  $i$-th column in $W$
 - $w_0,b$: params of linear transform (see Projection Discriminator)
 
-![](img/15.png)
+<img src="img/15.png" style="zoom:50%;" />
 
 - The Discriminator $D$ predicts a single scalar (realism score) $r$, that indicates whether the input frame is a real frame of the $i$-th video sequence, and whether it matches the input pose
 

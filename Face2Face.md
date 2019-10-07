@@ -17,7 +17,7 @@
 
 ## II. Related Tech
 
-- Morphable 3D Face Model([A Morphable Model for the Synthesis of 3D Faces](http://www.researchgate.net/publication/2892137_A_Morphable_Model_for_the_Synthesis_of_3D_Faces?ev=auth_pub))
+- **Morphable 3D Face Model**([A Morphable Model for the Synthesis of 3D Faces](http://www.researchgate.net/publication/2892137_A_Morphable_Model_for_the_Synthesis_of_3D_Faces?ev=auth_pub))
 
   ![](img/17.png)
 
@@ -25,9 +25,20 @@
   - Given some exemplar prototypes, new faces and expressions can be modeled by forming linear combinations of the prototypes. 
   - So the morphable model can be parameterized by the coefficients
 
+- **Local Binary Pattern**([LBP](https://blog.csdn.net/u012856866/article/details/44975379))
+
+  -  LBP（Local Binary Pattern，局部二值模式）是一种用来描述图像局部纹理特征的算子
+  - Basic LBP: 对图像中的每个像素，通过计算以其为中心的3*3邻域内各像素和中心像素的大小关系，把像素的灰度值转化为一个八位二进制序列
+
+  ![](img/20.png)
+
+  - Some examples:
+
+    <img src="img/21.png" style="zoom:67%;" />
+
 ## III. Method
 
-![](img/18.png)
+<img src="img/18.png" style="zoom:67%;" />
 
 ### (0). Parametrized model
 
@@ -43,7 +54,7 @@ $$
 - Data:
   - $a_{id},a_{alb}$: average shape and reflectance
   - $E_{id},E_{alb}\in R^{3n*80}$, $E_{exp}\in R^{3n*76}$: shape, reflectance, expression basis
-- Parameters $P$:
+- **Parameters $P$:**
   - Global
     - Identity: shape $\alpha$ and reflectance $\beta$
     - Camera: $\kappa$
@@ -135,7 +146,7 @@ $$
 D(K^T,K^S_t,t)=D_p(K^T,K^S_t)+D_M(K^T,K^S_t)+D_a(K^T,K^S_t,t)
 $$
 
-- Descriptor $K={R,\delta,F,L}$:
+- Descriptor $K=\{R,\delta,F,L\}$:
   - $R, \delta$: rotation and expression
   - $F$: facial landmarks
   - $L$: Local Binary Pattern(LBP)
